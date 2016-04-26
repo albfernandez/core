@@ -45,7 +45,6 @@ import junit.framework.TestCase;
 import org.easymock.Capture;
 import org.easymock.CaptureType;
 import org.jboss.test.faces.mock.MockFacesEnvironment;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.internal.matchers.StringContains;
 
@@ -471,8 +470,8 @@ public class ScriptUtilsTest extends TestCase {
     }
 
 
-    @Ignore("bad tzdata-java on debian")
-    public void kk() throws Exception {
+    @Test
+    public void testTimezoneSerialization() throws Exception {
         TimeZone utcPlusTwoTZ = TimeZone.getTimeZone("GMT+02:00");
 
         String serializedUTCPlusTwoTZ = dehydrate(ScriptUtils.toScript(utcPlusTwoTZ));
